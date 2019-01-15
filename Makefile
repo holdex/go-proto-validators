@@ -44,7 +44,7 @@ regenerate:
 	(protoc \
 	--proto_path=${GOPATH}/src \
 	--proto_path=. \
-	--go_out=. validator.proto)
+	--gogo_out=. validator.proto)
 
 generate:
 	@echo "--- Generating validator.proto"
