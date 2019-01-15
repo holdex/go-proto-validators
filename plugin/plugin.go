@@ -369,7 +369,7 @@ func (p *plugin) generateProto3Message(file *generator.FileDescriptor, message *
 
 func (p *plugin) generateOptionalValidator(variableName string, ccTypeName string, fieldName string, fv *validator.FieldValidator, Ftype string) {
 	if fv.Optional != nil && fv.GetOptional() {
-		p.P(`if ( len(`, variableName, `) > `, 0, `) {`)
+		p.P(`if ( len(string(`, variableName, `)) > `, 0, `) {`)
 		p.In()
 		switch Ftype {
 		case "string":
