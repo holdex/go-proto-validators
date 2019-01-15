@@ -43,8 +43,10 @@ regenerate:
 	@echo "--- Regenerating validator.proto"
 	(protoc \
 	--proto_path=${GOPATH}/src \
+	--proto_path=${GOPATH}/src/github.com/gogo/protobuf/protobuf \
 	--proto_path=. \
-	--gogo_out=. validator.proto)
+	--gogo_out=Mgoogle/protobuf/descriptor.proto=github.com/gogo/protobuf/protoc-gen-gogo/descriptor:. \
+	validator.proto)
 
 generate:
 	@echo "--- Generating validator.proto"

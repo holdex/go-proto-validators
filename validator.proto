@@ -64,5 +64,4 @@ message FieldValidator {
   optional int64 length_eq = 16;
   // Field value disable validation until is not empty
   optional bool optional = 17;
-
 }
