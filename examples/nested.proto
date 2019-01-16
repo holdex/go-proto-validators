@@ -1,14 +1,11 @@
 syntax = "proto3";
 package validator.examples;
+import "examples/shared/shared.proto";
 import "bitbucket.org/holdex/go-proto-validators/validator.proto";
 
 message InnerMessage {
   // some_integer can only be in range (1, 100).
-  InType test = 1 [(validator.field) = {int_gt:1 is_in_enum:true}];
-  repeated InType test_array = 2 [(validator.field) = {is_in_enum:true}];
-}
 
-enum InType {
-  ANY = 0;
-  Test = 1;
+  example_shared.InnerInnerMessage test = 1 [(validator.field) = {msg_exists: true}];
+  repeated example_shared.InType test_array = 2 [(validator.field) = {int_gt:0 int_lt:2}];
 }

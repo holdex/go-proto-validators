@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package example_shared;
+import "bitbucket.org/holdex/go-proto-validators/validator.proto";
+
+enum InType {
+    ANY = 0;
+    Test = 1;
+}
+
+message InnerInnerMessage {
+    // some_integer can only be in range (1, 100).
+    InType test = 1;
+    repeated InType test_array = 2;
+}

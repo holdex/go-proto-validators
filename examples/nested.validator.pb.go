@@ -4,9 +4,10 @@
 package validator_examples
 
 import (
+	_ "bitbucket.org/holdex/go-proto-validators"
+	bitbucket_org_holdex_go_proto_validators "bitbucket.org/holdex/go-proto-validators"
+	_ "examples/shared"
 	fmt "fmt"
-	_ "github.com/georgeciubotaru/go-proto-validators"
-	github_com_georgeciubotaru_go_proto_validators "github.com/georgeciubotaru/go-proto-validators"
 	proto "github.com/golang/protobuf/proto"
 	math "math"
 )
@@ -17,12 +18,20 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *InnerMessage) Validate() error {
-	if _, ok := InType_name[int32(this.Test)]; !ok {
-		return github_com_georgeciubotaru_go_proto_validators.FieldError("Test", fmt.Errorf(`value '%v' must be a valid InType field`, this.Test))
+	if nil == this.Test {
+		return bitbucket_org_holdex_go_proto_validators.FieldError("Test", fmt.Errorf("message must exist"))
+	}
+	if this.Test != nil {
+		if err := bitbucket_org_holdex_go_proto_validators.CallValidatorIfExists(this.Test); err != nil {
+			return bitbucket_org_holdex_go_proto_validators.FieldError("Test", err)
+		}
 	}
 	for _, item := range this.TestArray {
-		if _, ok := InType_name[int32(item)]; !ok {
-			return github_com_georgeciubotaru_go_proto_validators.FieldError("TestArray", fmt.Errorf(`value '%v' must be a valid InType field`, item))
+		if !(item > 0) {
+			return bitbucket_org_holdex_go_proto_validators.FieldError("TestArray", fmt.Errorf(`value '%v' must be greater than '0'`, item))
+		}
+		if !(item < 2) {
+			return bitbucket_org_holdex_go_proto_validators.FieldError("TestArray", fmt.Errorf(`value '%v' must be less than '2'`, item))
 		}
 	}
 	return nil
