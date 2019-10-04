@@ -4,9 +4,9 @@
 package example_shared
 
 import (
-	_ "bitbucket.org/holdex/go-proto-validators"
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
+	_ "github.com/holdex/go-proto-validators"
 	math "math"
 )
 

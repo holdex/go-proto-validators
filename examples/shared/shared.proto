@@ -1,7 +1,7 @@
 syntax="proto3";
 
 package example_shared;
-import "bitbucket.org/holdex/go-proto-validators/validator.proto";
+import "github.com/holdex/go-proto-validators/validator.proto";
 
 enum InType {
     ANY = 0;

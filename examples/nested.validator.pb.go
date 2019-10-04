@@ -4,11 +4,11 @@
 package validator_examples
 
 import (
-	_ "bitbucket.org/holdex/go-proto-validators"
-	bitbucket_org_holdex_go_proto_validators "bitbucket.org/holdex/go-proto-validators"
 	_ "examples/shared"
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
+	_ "github.com/holdex/go-proto-validators"
+	bitbucket_org_holdex_go_proto_validators "github.com/holdex/go-proto-validators"
 	math "math"
 )
 

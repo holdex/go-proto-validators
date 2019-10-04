@@ -1,7 +1,7 @@
 syntax = "proto3";
 package validator.examples;
 import "examples/shared/shared.proto";
-import "bitbucket.org/holdex/go-proto-validators/validator.proto";
+import "github.com/holdex/go-proto-validators/validator.proto";
 
 message InnerMessage {
   // some_integer can only be in range (1, 100).

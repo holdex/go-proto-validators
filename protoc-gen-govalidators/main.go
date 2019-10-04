@@ -9,9 +9,9 @@ import (
 	"strconv"
 	"strings"
 
-	validator_plugin "bitbucket.org/holdex/go-proto-validators/plugin"
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/protoc-gen-gogo/generator"
+	validator_plugin "github.com/holdex/go-proto-validators/plugin"
 )
 
 func main() {

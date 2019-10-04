@@ -11,7 +11,7 @@ Let's take the following `proto3` snippet:
 ```proto
 syntax = "proto3";
 package validator.examples;
-import "bitbucket.org/holdex/go-proto-validators/validator.proto";
+import "github.com/holdex/go-proto-validators/validator.proto";
 
 message InnerMessage {
   // some_integer can only be in range (1, 100).
@@ -80,7 +80,7 @@ export PATH=${PATH}:${GOPATH}/bin
 Then, do the usual
 
 ```sh
-go get bitbucket.org/holdex/go-proto-validators/protoc-gen-govalidators
+go get github.com/holdex/go-proto-validators/protoc-gen-govalidators
 ```
 
 Your `protoc` builds probably look very simple like:
